@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3D相册</title>
+    <link rel="stylesheet" href="./css/3Dalbum.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box">
+            <div class="img img1"></div>
+            <div class="img img2"></div>
+            <div class="img img3"></div>
+            <div class="img img4"></div>
+            <div class="img img5"></div>
+            <div class="img img6"></div>
+            <div class="img img7"></div>
+            <div class="img img8"></div>
+            <div class="img img9"></div>
+        </div>
+    </div>
+    <audio id="music" src="music/my-soul.mp3" loop="loop" autoplay></audio>
+    <img id="musicImg" src="img/music-image.png" width="100px" onClick="play()" alt="musicImg" />
+    <script>
+        window.onload = function () {
+            var audio = document.getElementById('music');
+            audio.pause(); //打开页面时无音乐
+        }
+
+        function play() {
+            var audio = document.getElementById('music');
+            if (audio.paused) {
+                audio.play();
+                document.getElementById('musicImg').src = "img/music-image.png";
+            } else {
+                audio.pause();
+                audio.currentTime = 0; //音乐从头播放
+                document.getElementById('musicImgs').src = "img/muisc-image.png";
+            }
+        }
+    </script>
+</body>
+
+</html>
